@@ -7,6 +7,7 @@ public class Professor {
     private String nome;
     private String cpf;
     private List<String> disciplinas;
+    private double salario;
     private double sal;
 
     public Professor(int id, String nome, String cpf, List<String> disciplinas) {
@@ -46,6 +47,14 @@ public class Professor {
 
     public void setDisciplinas(List<String> disciplinas) {
         this.disciplinas = disciplinas;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
     public double getSal() {
