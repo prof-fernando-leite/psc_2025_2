@@ -37,7 +37,7 @@ public class CommandLineView {
         String nome = scanner.next();
         System.out.println("Digite o email do professor");
         String email = scanner.next();
-        professorDAO.insert(new Professor(1, nome, email));
+        professorDAO.insert(new Professor(professorDAO.getMaxId() +1, nome, email));
         menu();
     }
     private void listarTodos() {

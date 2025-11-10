@@ -43,4 +43,20 @@ public class ProfessorDAO {
         }
         return professores;
     }
+
+    public Integer getMaxId() {
+        String sql = "SELECT MAX(id) AS max_id FROM professores";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+                if (rs.next()) {
+                    return Integer.parseInt(rs.getString("max_id"));
+                }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 1;
+    }
 }
